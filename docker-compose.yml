@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  database-emotia-mart:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: emotia-mart-sql
+    environment:
+      SA_PASSWORD: "EmotiaMart123!"
+      MSSQL_DB: "EmotiaMartDb"  
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+    networks:
+      - emotia-network
+
+  emotia-mart-service:
+    container_name: emotia-mart-container
+    build:
+      # context: ./src/EmotiaMart.Backend
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "2029:2029"
+    depends_on:
+      - database-emotia-mart
+    volumes:
+      - .:/emotia-mart
+      - ./src/Web-Spa:/emotia-mart/src/Web-Spa:cached
+      - ./src/Web-Spa/node_modules:/emotia-mart/src/Web-Spa/node_modules
+      - ./.devcontainer/local_cert.pfx:/root/.aspnet/https/EmotiaMart.API.pfx:ro
+    environment:
+      DB_HOST: emotia-mart-sql   # 👈 connect to SQL container by name
+      DB_PORT: 1433
+      DB_NAME: EmotiaMartDb
+      DB_USER: sa
+      DB_PASS: EmotiaMart123!
+      ASPNETCORE_URLS: https://+:2029
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /root/.aspnet/https/EmotiaMart.API.pfx
+      ASPNETCORE_Kestrel__Certificates__Default__Password: EmotiaMart123
+    networks:
+      - emotia-network
+volumes:
+  sql_data:
+
+networks:
+  emotia-network:
+    driver: bridge

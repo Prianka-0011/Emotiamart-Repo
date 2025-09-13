@@ -1,0 +1,30 @@
+<div class="register-parent">
+    <h1>Sign up</h1>
+    <p class="signup-text">
+        Already have an account? <a [routerLink]="['/auth/login']" class="signup-link">Sign in</a>
+    </p>
+
+    <form class="register-form">
+        <div class="input-wrapper">
+            <label for="fristName">Frist Name</label>
+            <input id="fristName" type="text" placeholder="Enter your Frist Name" class="input-field" />
+        </div>
+        <div class="input-wrapper">
+            <label for="lastName">Last Name</label>
+            <input id="lasttName" type="text" placeholder="Enter your Last Name" class="input-field" />
+        </div>
+        <div class="input-wrapper">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="Enter your email" class="input-field" />
+        </div>
+        <div class="input-wrapper">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Enter your password" class="input-field" />
+        </div>
+        <div class="input-wrapper">
+            <label for="confirmPassword">Confirm Password</label>
+            <input id="confirmPassword" type="password" placeholder="Confirm password" class="input-field" />
+        </div>
+        <button type="submit" class="register-btn">Sign in</button>
+    </form>
+</div>

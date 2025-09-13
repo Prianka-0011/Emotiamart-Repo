@@ -1,0 +1,121 @@
+.register-parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 1rem;
+}
+
+.register-parent h1 {
+    font-size: 2rem;
+    margin-bottom: .5rem;
+    color: #ff6f00;
+}
+
+.register-form {
+    //   border: thin dashed orange;
+    padding: 2rem 2rem 0 2rem;
+    width: 70%;
+    max-width: 700px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input-wrapper label {
+    font-size: 1rem;
+    color: #ff6f00;
+    margin-bottom: 5px;
+}
+
+.input-field {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ff6f00;
+    padding: 8px 0;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-field:focus {
+    border-bottom-color: #e65100;
+    box-shadow: 0 2px 0 rgba(255, 111, 0, 0.4);
+}
+
+.register-btn {
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #e5e2e0, hwb(30 25% 0%)) !important;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.register-btn:hover {
+    background-color: #e65100;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.register-btn:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
+}
+
+.register-parent .signup-text {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.register-parent .signup-link {
+    color: #ff6f00 !important;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-parent .signup-link:hover {
+    text-decoration: underline;
+}
+
+.register-parent .forget-text-div {
+    // border: thin dashed orange;
+    width: 70%;
+    max-width: 700px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    // gap: 1.5rem;
+}
+
+.register-parent .forget-text-div .forget-text {
+    font-size: 0.95rem;
+    color: #555;
+    text-align: left;
+}
+
+.register-parent .forget-text-div .forget-link {
+    color: #ff6f00 !important;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-parent .forget-text-div .forget-link:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "EmotiaMart Dev Container",
+  "dockerComposeFile": [
+    "../docker-compose.yml"
+  ],
+  "service": "emotia-mart-service",     
+  "workspaceFolder": "/emotia-mart",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "editor.formatOnSave": true
+  },
+  "customizations": {
+		"vscode": {
+			"extensions": [
+				// "continue.continue", // causing performance issues
+				"ms-mssql.mssql",
+				"ms-dotnettools.csharp",
+				"ms-dotnettools.csdevkit",
+				"eamodio.gitlens",
+				"apollographql.vscode-apollo",
+				"devexpress.devexpress-report-designer-ex"
+			]
+		}
+	},
+  "remoteUser": "root"
+}

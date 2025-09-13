@@ -1,0 +1,9 @@
+.git
+**/bin
+**/obj
+**/node_modules
+**/.vs
+**/.vscode
+docker-compose.override.yml
+*.user
+*.pfx

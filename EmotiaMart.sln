@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9D540C65-7236-47F1-A21C-52E144ED86EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EmotiaMart.Backend", "EmotiaMart.Backend", "{3C10E078-7D3C-4F15-A8F9-064459500FBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmotiaMart.API", "src\EmotiaMart.Backend\EmotiaMart.API\EmotiaMart.API.csproj", "{B912EF42-3237-4F72-A5F4-09CA450B689D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EmotiaMart.Application", "EmotiaMart.Application", "{49E25451-2647-46FF-BF5D-A3060722DE72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmotiaMart.Application", "src\EmotiaMart.Backend\EmotiaMart.Application\EmotiaMart.Application.csproj\EmotiaMart.Application.csproj", "{7C874374-3642-46A5-861C-838686742F7B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EmotiaMart.Domain", "EmotiaMart.Domain", "{F95FBE74-7076-4A47-BC19-47B50AD10787}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmotiaMart.Domain", "src\EmotiaMart.Backend\EmotiaMart.Domain\EmotiaMart.Domain.csproj\EmotiaMart.Domain.csproj", "{DCFF3BA8-D356-4094-ABAA-D7C7490FE665}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EmotiaMart.Infrastructure", "EmotiaMart.Infrastructure", "{D48D4BB7-2199-4975-9AF4-2DBC149E70DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmotiaMart.Infrastructure", "src\EmotiaMart.Backend\EmotiaMart.Infrastructure\EmotiaMart.Infrastructure.csproj\EmotiaMart.Infrastructure.csproj", "{9AA831D8-84CA-4EE4-8C05-B165FD116FE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B912EF42-3237-4F72-A5F4-09CA450B689D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B912EF42-3237-4F72-A5F4-09CA450B689D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B912EF42-3237-4F72-A5F4-09CA450B689D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B912EF42-3237-4F72-A5F4-09CA450B689D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C874374-3642-46A5-861C-838686742F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C874374-3642-46A5-861C-838686742F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C874374-3642-46A5-861C-838686742F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C874374-3642-46A5-861C-838686742F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCFF3BA8-D356-4094-ABAA-D7C7490FE665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCFF3BA8-D356-4094-ABAA-D7C7490FE665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCFF3BA8-D356-4094-ABAA-D7C7490FE665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCFF3BA8-D356-4094-ABAA-D7C7490FE665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AA831D8-84CA-4EE4-8C05-B165FD116FE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AA831D8-84CA-4EE4-8C05-B165FD116FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AA831D8-84CA-4EE4-8C05-B165FD116FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AA831D8-84CA-4EE4-8C05-B165FD116FE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3C10E078-7D3C-4F15-A8F9-064459500FBD} = {9D540C65-7236-47F1-A21C-52E144ED86EA}
+		{B912EF42-3237-4F72-A5F4-09CA450B689D} = {3C10E078-7D3C-4F15-A8F9-064459500FBD}
+		{49E25451-2647-46FF-BF5D-A3060722DE72} = {3C10E078-7D3C-4F15-A8F9-064459500FBD}
+		{7C874374-3642-46A5-861C-838686742F7B} = {49E25451-2647-46FF-BF5D-A3060722DE72}
+		{F95FBE74-7076-4A47-BC19-47B50AD10787} = {3C10E078-7D3C-4F15-A8F9-064459500FBD}
+		{DCFF3BA8-D356-4094-ABAA-D7C7490FE665} = {F95FBE74-7076-4A47-BC19-47B50AD10787}
+		{D48D4BB7-2199-4975-9AF4-2DBC149E70DE} = {3C10E078-7D3C-4F15-A8F9-064459500FBD}
+		{9AA831D8-84CA-4EE4-8C05-B165FD116FE8} = {D48D4BB7-2199-4975-9AF4-2DBC149E70DE}
+	EndGlobalSection
+EndGlobal

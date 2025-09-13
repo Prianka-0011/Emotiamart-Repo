@@ -1,0 +1,6 @@
+@EmotiaMart.API_HostAddress = http://localhost:5199
+
+GET {{EmotiaMart.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,23 @@
+<mat-grid-list cols="12" rowHeight="100vh" gutterSize="0">
+
+  <mat-grid-tile [colspan]="6" class="auth-left-tile">
+    <mat-card class="auth-left-panel mat-elevation-z6">
+      <div class="auth-left-overlay">
+        <h1>Welcome to <span>Emotia Mart</span></h1>
+        <p>At Emotia Mart, we bring you trusted brands and handpicked products with love and care. We believe in
+          shopping with integrity, so every experience is guided by quality, trust, and moral values.</p>
+      </div>
+      <img src="assets/images/auth_left_banner.jpg" class="auth-left-image" alt="Emotia Mart Logo" />
+    </mat-card>
+  </mat-grid-tile>
+
+  <div class="design-div"></div>
+
+  <mat-grid-tile [colspan]="6" class="auth-right-tile">
+    <img src="assets/logo/emotia_logo_without_black.png" class="auth-right-logo" alt="Emotia Mart Logo" />
+    <div class="router-div">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-grid-tile>
+
+</mat-grid-list>
