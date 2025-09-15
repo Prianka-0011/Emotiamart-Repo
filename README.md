@@ -124,11 +124,10 @@ ng serve --ssl true --ssl-cert "D:\EmotiaMart\.devcontainer\server.crt" --ssl-ke
 # Frontend Layout 
 
 src/app/
-├── app.module.ts
-├── app-routing.module.ts
+├── app.config.ts                # replaces app.module.ts in standalone projects
+├── app.routes.ts                # replaces app-routing.module.ts
 ├── shared/
-│   ├── shared.module.ts
-│   ├── material.module.ts
+│   ├── material.config.ts       # standalone import of Angular Material
 │   └── models/
 │       ├── user.model.ts
 │       ├── category.model.ts
@@ -136,8 +135,7 @@ src/app/
 │       ├── product.model.ts
 │       └── order.model.ts
 ├── auth/
-│   ├── auth.module.ts
-│   ├── auth-routing.module.ts
+│   ├── auth.routes.ts
 │   ├── layouts/
 │   │   └── auth-layout/
 │   │       ├── auth-layout.component.ts
@@ -154,34 +152,52 @@ src/app/
 │   │       └── forgot-password.component.html
 │   └── services/
 │       └── auth.service.ts
-└── admin/
-    ├── admin.module.ts
-    ├── admin-routing.module.ts
+├── admin/
+│   ├── admin.routes.ts
+│   ├── components/
+│   │   ├── dashboard/
+│   │   ├── users/
+│   │   ├── categories/
+│   │   ├── brands/
+│   │   ├── products/
+│   │   └── orders/
+│   └── services/
+│       ├── user.service.ts
+│       ├── category.service.ts
+│       ├── brand.service.ts
+│       ├── product.service.ts
+│       └── order.service.ts
+└── ecommerce/
+    ├── ecommerce.routes.ts
+    ├── layouts/
+    │   └── ecommerce-layout/
+    │       ├── ecommerce-layout.component.ts
+    │       └── ecommerce-layout.component.html
     ├── components/
-    │   ├── dashboard/
-    │   │   ├── dashboard.component.ts
-    │   │   └── dashboard.component.html
-    │   ├── users/
-    │   │   ├── users.component.ts
-    │   │   └── users.component.html
-    │   ├── categories/
-    │   │   ├── categories.component.ts
-    │   │   └── categories.component.html
-    │   ├── brands/
-    │   │   ├── brands.component.ts
-    │   │   └── brands.component.html
+    │   ├── home/
+    │   │   ├── home.component.ts
+    │   │   └── home.component.html
     │   ├── products/
-    │   │   ├── products.component.ts
-    │   │   └── products.component.html
+    │   │   ├── product-list/
+    │   │   │   ├── product-list.component.ts
+    │   │   │   └── product-list.component.html
+    │   │   └── product-detail/
+    │   │       ├── product-detail.component.ts
+    │   │       └── product-detail.component.html
+    │   ├── cart/
+    │   │   ├── cart.component.ts
+    │   │   └── cart.component.html
+    │   ├── checkout/
+    │   │   ├── checkout.component.ts
+    │   │   └── checkout.component.html
     │   └── orders/
-    │       ├── orders.component.ts
-    │       └── orders.component.html
+    │       ├── my-orders.component.ts
+    │       └── my-orders.component.html
     └── services/
-        ├── user.service.ts
-        ├── category.service.ts
-        ├── brand.service.ts
-        ├── product.service.ts
+        ├── ecommerce.service.ts
+        ├── cart.service.ts
         └── order.service.ts
+
 
 # ng generate module admin --routing --flat  give me both router an module too
 
