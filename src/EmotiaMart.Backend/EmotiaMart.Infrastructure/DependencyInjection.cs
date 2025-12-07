@@ -74,6 +74,7 @@ namespace EmotiaMart.Infrastructure
 
             // Register other services, repositories, etc.
             services.AddScoped<IUserRepository, UserRepository>();
+            
 
             return services;
         }

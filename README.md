@@ -3,6 +3,7 @@
 **EmotiaMart** is a modern, scalable e-commerce application built using **Angular** (frontend), **.NET Core** (backend), and **GraphQL**. The project follows **Clean Architecture principles** to ensure maintainability, testability, and scalability.
 
 ---
+dotnet ef migrations add Update-User-Table -p src/EmotiaMart.Backend/EmotiaMart.Infrastructure -s src/EmotiaMart.Backend/EmotiaMart.API
 
 ## **Folder Structure (Clean Architecture)**
 
@@ -27,32 +28,44 @@ EmotiaMart/
 ### **Create Projects**
 
 ```bashcd
+dotnet new sln -n EmotiaMart
+
 # API
 dotnet new webapi -n EmotiaMart.API -o src/EmotiaMart.Backend/EmotiaMart.API
+GraphQL added to Api
 
 # Application
 dotnet new classlib -n EmotiaMart.Application -o src/EmotiaMart.Backend/EmotiaMart.Application
+dotnet Add mediator and mapper
+command and query to Application
 
 # Domain
 dotnet new classlib -n EmotiaMart.Domain -o src/EmotiaMart.Backend/EmotiaMart.Domain
+IAuditEntry + All the entities
 
 # Infrastructure
 dotnet new classlib -n EmotiaMart.Infrastructure -o src/EmotiaMart.Backend/EmotiaMart.Infrastructure
-
+dotnet add reference ../EmotiaMart.Application/EmotiaMart.Application.csproj
+Repository + AuditEntry 
 
 # API → Application & Infrastructure
 cd src/EmotiaMart.Backend/EmotiaMart.API
 dotnet add reference ../EmotiaMart.Application/EmotiaMart.Application.csproj
 dotnet add reference ../EmotiaMart.Infrastructure/EmotiaMart.Infrastructure.csproj
 
+
+
 # Application → Domain
 cd ../EmotiaMart.Application
 dotnet add reference ../EmotiaMart.Domain/EmotiaMart.Domain.csproj
 
+
+
 # Infrastructure → Domain & Application
 cd ../EmotiaMart.Infrastructure
 dotnet add reference ../EmotiaMart.Domain/EmotiaMart.Domain.csproj
-dotnet add reference ../EmotiaMart.Application/EmotiaMart.Application.csproj
+
+
 
 ---
 

@@ -12,4 +12,8 @@ public partial class Query
     {
         return await mediator.Send(new GetUsersQuery());
     }
+    public async Task<UserVm>GetUserById(Guid id, [Service] IMediator mediator)
+    {
+        return await mediator.Send(new GetUserByIdQuery { Id = id });
+    }
 }

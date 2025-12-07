@@ -1,15 +1,19 @@
-<nav class="navbar mat-elevation-z4">
-  <div class="logo"><span>Emotia Mart</span></div>
-  <div class="icons">
-    <a routerLink="/account" routerLinkActive="active" class="cart-link">
-      <span class="material-symbols-outlined">account_circle</span>
-    </a>
-    <a routerLink="/cart" routerLinkActive="active" class="cart-link">
-      <span class="material-icons">local_grocery_store</span>
-      <span class="cart-badge">0</span>
-    </a>
+<div class="auth-layout">
+  <nav class="navbar mat-elevation-z4">
+    <div class="logo"><span>Emotia Mart</span></div>
+    <div class="icons">
+      <a routerLink="/account" routerLinkActive="active" class="cart-link">
+        <span class="material-symbols-outlined">account_circle</span>
+      </a>
+      <a routerLink="/cart" routerLinkActive="active" class="cart-link">
+        <span class="material-icons">local_grocery_store</span>
+        <span class="cart-badge">0</span>
+      </a>
+    </div>
+  </nav>
+  <div class="main-content">
+    <router-outlet></router-outlet>
   </div>
-</nav>
+</div>
 
 <!-- Main content -->
-<router-outlet></router-outlet>

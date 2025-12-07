@@ -1,30 +1,52 @@
 <div class="register-parent">
-    <h1>Sign up</h1>
-    <p class="signup-text">
-        Already have an account? <a [routerLink]="['/auth/login']" class="signup-link">Sign in</a>
-    </p>
+  <h1>Sign up</h1>
+  <p class="signup-text">
+    Already have an account? <a [routerLink]="['/auth/login']" class="signup-link">Sign in</a>
+  </p>
 
-    <form class="register-form">
-        <div class="input-wrapper">
-            <label for="fristName">Frist Name</label>
-            <input id="fristName" type="text" placeholder="Enter your Frist Name" class="input-field" />
-        </div>
-        <div class="input-wrapper">
-            <label for="lastName">Last Name</label>
-            <input id="lasttName" type="text" placeholder="Enter your Last Name" class="input-field" />
-        </div>
-        <div class="input-wrapper">
-            <label for="email">Email</label>
-            <input id="email" type="email" placeholder="Enter your email" class="input-field" />
-        </div>
-        <div class="input-wrapper">
-            <label for="password">Password</label>
-            <input id="password" type="password" placeholder="Enter your password" class="input-field" />
-        </div>
-        <div class="input-wrapper">
-            <label for="confirmPassword">Confirm Password</label>
-            <input id="confirmPassword" type="password" placeholder="Confirm password" class="input-field" />
-        </div>
-        <button type="submit" class="register-btn">Sign in</button>
-    </form>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+    <div class="input-wrapper">
+      <label for="fristName">Frist Name</label>
+      <input id="firstName" formControlName="firstName" type="text" placeholder="Enter your Frist Name"
+        class="input-field" />
+      <div *ngIf="registerForm.get('firstName')?.touched && registerForm.get('firstName')?.invalid" class="erroe">
+        First name is required (min 2 chars).
+      </div>
+    </div>
+    <div class="input-wrapper">
+      <label for="lastName">Last Name</label>
+      <input id="lastName" formControlName="lastName" type="text" placeholder="Enter your Last Name"
+        class="input-field" />
+      <div *ngIf="registerForm.get('lastName')?.touched && registerForm.get('lastName')?.invalid" class="erroe">
+        Last name is required (min 2 chars).
+      </div>
+    </div>
+    <div class="input-wrapper">
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" type="email" placeholder="Enter your email" class="input-field" />
+      <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+        Please enter a valid email.
+      </div>
+    </div>
+    <div class="input-wrapper">
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password" placeholder="Enter your password"
+        class="input-field" />
+      <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+        Password must be at least 6 characters long, contain at least one uppercase letter, one lowercase
+        letter, one number, and one special character.
+      </div>
+    </div>
+    <div class="input-wrapper">
+      <label for="confirmPassword">Confirm Password</label>
+      <input id="confirmPassword" formControlName="confirmPassword" type="password" placeholder="Confirm password"
+        class="input-field" />
+      <div
+        *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.hasError('mismatch')"
+        class="erroe">
+        Please confirm your password.
+      </div>
+    </div>
+    <button type="submit" class="register-btn">Sign in</button>
+  </form>
 </div>

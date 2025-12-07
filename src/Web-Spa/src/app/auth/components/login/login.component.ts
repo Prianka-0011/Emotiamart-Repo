@@ -1,44 +1,56 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { AuthService, UserVm } from '../../services/auth.service';
+import { Component, OnInit } from '@angular/core';
+import { RouterLink, RouterModule } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { LoginVm } from '../../interfaces/user-vm';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
+  standalone: true, 
   imports: [
     CommonModule,
-    MatGridListModule,
-    MatFormFieldModule,
-    MatCardModule,
-    MatInputModule,
-    MatButtonModule,
-    RouterLink
+    RouterModule,
+    ReactiveFormsModule
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
-  constructor(private authService: AuthService) {
+export class LoginComponent implements OnInit {
 
+  loginForm!: FormGroup;
+  dogList: any [] = [];
+  constructor(private authService: AuthService, private toastr: ToastrService) {
+    this.loginForm = new FormGroup({
+      email: new FormControl('', { validators: [Validators.required], nonNullable: true }),
+      password: new FormControl('', { validators: [Validators.required], nonNullable: true })
+    })
   }
-  // users: UserVm[] = [];
-  // ngOnInit()
-  // {
-  //   this.authService.getUsers().subscribe({
-  //     next: data => {
-  //       this.users = data;
-  //       console.log( this.users)
-  //     },
-  //     error: err => {
-  //       console.log(err);
-  //     }
-  //   })
-  // }
+
+  ngOnInit(): void {
+    // this.authService.test().subscribe({
+    //   next: data => {
+    //     this.dogList = data;
+    //     console.log("Hello sweet cals", data);
+    //   }
+    // })
+  }
+
+  onSubmit() {
+    if (this.loginForm.valid) {
+       console.log(this.loginForm.valid);
+      this.authService.login(this.loginForm.value as LoginVm).subscribe({
+        next: data => {
+          // console.log(data);
+          this.toastr.success('Login successful!', 'Success');
+        }
+        , error: err => {
+          console.log(err)
+        }
+      })
+    }
+  }
 
 
 }

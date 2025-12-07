@@ -4,7 +4,17 @@ using EmotiaMart.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using EmotiaMart.API.GraphQL.Queries;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using EmotiaMart.API.GraphQL.Filters;
+using HotChocolate.Execution.Options;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using HotChocolate.Diagnostics;
+using HotChocolate.Types;
+using HotChocolate.AspNetCore.Authorization;
+using EmotiaMart.API.GraphQL.Mutations;
 
+int requestTimeOut = Convert.ToInt32(Environment.GetEnvironmentVariable("REQUEST_TIME_OUT") ?? "30");
 var builder = WebApplication.CreateBuilder(args);
 static void UpdateDatabase(IApplicationBuilder app)
 {
@@ -33,7 +43,19 @@ builder.Services.AddCors(options =>
 
 builder.Services
     .AddGraphQLServer()
-    .AddQueryType<Query>();
+    .AddQueryType<Query>()
+    .AddMutationType<Mutation>()
+    .AddErrorFilter<GraphQlErrorFilter>()   
+    .AddType<UploadType>()
+    .AddAuthorization()
+    .AddHttpRequestInterceptor<HttpRequestInterceptor>()
+    .ModifyRequestOptions(opts =>
+    {
+        opts.ExecutionTimeout = TimeSpan.FromSeconds(requestTimeOut);
+    })
+    .AddInstrumentation(o => o.RenameRootActivity = true)
+    .AllowIntrospection(builder.Environment.IsDevelopment());
+
 
 builder.Services.AddSpaStaticFiles(configuration =>
 {

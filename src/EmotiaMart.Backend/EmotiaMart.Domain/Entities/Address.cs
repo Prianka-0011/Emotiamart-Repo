@@ -25,8 +25,8 @@ public class Address : IAuditable
     public string Country { get; set; } = null!;
 
     public bool IsDefault { get; set; } = false;
-    public DateTime CreatedDate { get; set; }
-    public Guid CreatedById { get; set; }
+    public DateTime? CreatedDate { get; set; }
+    public Guid? CreatedById { get; set; }
     public DateTime? UpdatedDate { get; set; }
     public Guid? UpdatedById { get; set; }
 }

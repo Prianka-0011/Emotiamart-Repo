@@ -5,6 +5,7 @@
       "name": "Container",
       "type": "coreclr",
       "request": "launch",
+      "preLaunchTask": "build",
       "program": "${workspaceFolder}/src/EmotiaMart.Backend/EmotiaMart.API/bin/Debug/net8.0/EmotiaMart.API.dll",
       "args": [],
       "cwd": "${workspaceFolder}/src/EmotiaMart.Backend/EmotiaMart.API",
@@ -25,17 +26,13 @@
         "/Views": "${workspaceFolder}/Views"
       }
     },
-    {
+      {
       "name": "Local",
       "type": "coreclr",
       "request": "launch",
-      "preLaunchTask": null,
-      "program": "dotnet",
-      "args": [
-        "run",
-        "--project",
-        "${workspaceFolder}/src/EmotiaMart.Backend/EmotiaMart.API"
-      ],
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/src/EmotiaMart.Backend/EmotiaMart.API/bin/Debug/net8.0/EmotiaMart.API.dll",
+      "args": [],
       "cwd": "${workspaceFolder}/src/EmotiaMart.Backend/EmotiaMart.API",
       "stopAtEntry": false,
       "serverReadyAction": {

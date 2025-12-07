@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EmotiaMart.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7676dd15db97ed6a60ff168bb7c2380769d9cf50")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7fb45eaa292b579506c73e79561d48f41cafc2d")]
 [assembly: System.Reflection.AssemblyProductAttribute("EmotiaMart.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EmotiaMart.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

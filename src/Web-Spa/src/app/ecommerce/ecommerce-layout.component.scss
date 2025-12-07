@@ -1,3 +1,11 @@
+.auth-layout
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  border: thin dashed red;
+}
 .navbar {
   display: flex;
   justify-content: space-between;

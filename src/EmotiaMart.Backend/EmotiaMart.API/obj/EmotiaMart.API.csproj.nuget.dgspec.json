@@ -65,6 +65,14 @@
               "target": "Package",
               "version": "[13.9.14, )"
             },
+            "HotChocolate.AspNetCore.Authorization": {
+              "target": "Package",
+              "version": "[13.9.14, )"
+            },
+            "HotChocolate.Diagnostics": {
+              "target": "Package",
+              "version": "[13.9.14, )"
+            },
             "Microsoft.AspNetCore.SpaServices.Extensions": {
               "target": "Package",
               "version": "[8.0.10, )"
@@ -161,6 +169,22 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "HotChocolate": {
+              "target": "Package",
+              "version": "[13.9.14, )"
+            },
+            "HotChocolate.AspNetCore": {
+              "target": "Package",
+              "version": "[13.9.14, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.0.1, )"

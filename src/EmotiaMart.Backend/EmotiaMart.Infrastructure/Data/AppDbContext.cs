@@ -18,7 +18,7 @@ namespace EmotiaMart.Infrastructure.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.AddInterceptors(new AuditInterceptor(currentUserId));
+            // optionsBuilder.AddInterceptors(new AuditInterceptor(currentUserId));
             base.OnConfiguring(optionsBuilder);
         }
         public DbSet<User> Users { get; set; } = null!;

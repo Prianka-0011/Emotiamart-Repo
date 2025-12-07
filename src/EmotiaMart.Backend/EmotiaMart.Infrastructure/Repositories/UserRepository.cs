@@ -21,6 +21,14 @@ public class UserRepository : IUserRepository
             .FirstOrDefaultAsync(u => u.Id == id);
     }
 
+    public async Task<User?> GetByEmailAsync(string email)
+    {
+        return await _context.Users
+            .Include(u => u.BillingAddress)
+            .Include(u => u.ShippingAddress)
+            .FirstOrDefaultAsync(u => u.Email == email);
+    }
+
     public async Task<IReadOnlyList<User>> GetAllAsync()
     {
         return await _context.Users
@@ -32,7 +40,16 @@ public class UserRepository : IUserRepository
     public async Task<User> AddAsync(User user)
     {
         _context.Users.Add(user);
-        await _context.SaveChangesAsync();
+        try
+        {
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateException ex)
+        {
+            // Handle exceptions related to database updates, such as unique constraint violations
+            throw new Exception("An error occurred while adding the user to the database.", ex);
+        }
+        // await _context.SaveChangesAsync();
         return user;
     }
 

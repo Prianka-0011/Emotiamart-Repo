@@ -21,7 +21,8 @@ public class User : IAuditable
 
     [Required(ErrorMessage = "Password is required.")]
     [StringLength(100, MinimumLength = 6, ErrorMessage = "Password must be at least 6 characters.")]
-    public string PasswordHash { get; set; } = null!;
+    public string? PasswordHash { get; set; } 
+    public string? PasswordSalt { get; set; }
 
     [ForeignKey("BillingAddress")]
     public Guid? BillingAddressId { get; set; }
@@ -32,8 +33,8 @@ public class User : IAuditable
     public bool IsActive { get; set; } = true;
 
     // Audit fields
-    public DateTime CreatedDate { get; set; }
-    public Guid CreatedById { get; set; }                      
+    public DateTime? CreatedDate { get; set; }
+    public Guid? CreatedById { get; set; }                      
     public DateTime? UpdatedDate { get; set; }
     public Guid? UpdatedById { get; set; }
 }

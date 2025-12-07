@@ -32,7 +32,7 @@ public class AuditInterceptor : SaveChangesInterceptor
     {
         var entries = context.ChangeTracker.Entries()
             .Where(e => e.Entity is IAuditable &&
-                        (e.State == EntityState.Added || e.State == EntityState.Modified));
+                        (e.State == EntityState.Added || e.State == EntityState.Modified)).ToList();
 
         foreach (var entry in entries)
         {
