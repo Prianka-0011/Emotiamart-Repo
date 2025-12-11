@@ -29,6 +29,15 @@ public class LoginCommand : IRequest<LoginVm>
             // user.CreatedById = Guid.NewGuid();
 
             // await _userRepository.GetByEmailAsync(request.LoginInput.Email);
+            var user = await _userRepository.GetByEmailAsync(request.LoginInput.Email);
+            if(user == null)
+            {
+                return new LoginVm
+                {
+                    IsSuccess = false
+                };
+            }
+            
             
 
             return new LoginVm

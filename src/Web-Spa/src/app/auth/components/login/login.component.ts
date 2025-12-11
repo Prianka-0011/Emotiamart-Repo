@@ -8,7 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
-  standalone: true, 
+  standalone: true,
   imports: [
     CommonModule,
     RouterModule,
@@ -20,37 +20,28 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
-  dogList: any [] = [];
+  dogList: any[] = [];
   constructor(private authService: AuthService, private toastr: ToastrService) {
     this.loginForm = new FormGroup({
-      email: new FormControl('', { validators: [Validators.required], nonNullable: true }),
-      password: new FormControl('', { validators: [Validators.required], nonNullable: true })
+      email: new FormControl<string>('', { validators: [Validators.required], nonNullable: true }),
+      password: new FormControl<string>('', { validators: [Validators.required], nonNullable: true })
     })
   }
 
   ngOnInit(): void {
-    // this.authService.test().subscribe({
-    //   next: data => {
-    //     this.dogList = data;
-    //     console.log("Hello sweet cals", data);
-    //   }
-    // })
   }
 
   onSubmit() {
-    if (this.loginForm.valid) {
-       console.log(this.loginForm.valid);
+    console.log("Login form", this.loginForm.valid);
+    if(this.loginForm.valid)
+    {
       this.authService.login(this.loginForm.value as LoginVm).subscribe({
-        next: data => {
-          // console.log(data);
-          this.toastr.success('Login successful!', 'Success');
-        }
-        , error: err => {
-          console.log(err)
+        next: ()=>{
+          console.log("Login Success")
+        }, error: (err)=>{
+          this.toastr.error("Login Failed: " + err.message);
         }
       })
     }
   }
-
-
 }

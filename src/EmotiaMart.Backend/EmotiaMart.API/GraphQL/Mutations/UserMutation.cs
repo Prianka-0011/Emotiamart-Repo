@@ -15,9 +15,10 @@ public partial class Mutation
         return await mediator.Send(new CreateUserCommand { UserInput = userVm });
     }
     
-     public async Task<UserVm> Login([Service] IMediator mediator, UserInput userVm)
+     public async Task<UserVm> Login([Service] IMediator mediator, LoginInput loginVm)
     {
-         return await mediator.Send(new CreateUserCommand { UserInput = userVm });
+        //  return await mediator.Send(new CreateUserCommand { UserInput = userVm });
+        return null;
     }
 
     public async Task<User> UpdateUser([Service] IMediator mediator, UserVm userVm)

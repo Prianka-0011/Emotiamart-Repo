@@ -212,6 +212,14 @@ src/app/
         └── order.service.ts
 
 
+#Identity Implementation
+Api layer
+appsettings.json
+Program.cs
+---------------------------
+Infrastructure Layer
+Identity/JwtSettings.cs
+Identity/JwtTokenService.cs
 # ng generate module admin --routing --flat  give me both router an module too
 
 

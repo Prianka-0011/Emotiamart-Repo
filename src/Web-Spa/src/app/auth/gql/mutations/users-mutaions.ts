@@ -10,3 +10,11 @@ mutation register($userVm: UserInput!) {
     isActive
   }
 }`;
+
+export const LOGIN_USER = gql `
+mutation loginComponent(userVm: LoginInput!)
+{
+    login($userVm: userVm);
+    {
+    }
+};`
