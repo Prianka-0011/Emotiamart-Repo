@@ -184,3 +184,14 @@ D:\EmotiaMart\src\EmotiaMart.Backend\EmotiaMart.API\obj\Debug\net8.0\refint\Emot
 D:\EmotiaMart\src\EmotiaMart.Backend\EmotiaMart.API\obj\Debug\net8.0\EmotiaMart.API.pdb
 D:\EmotiaMart\src\EmotiaMart.Backend\EmotiaMart.API\obj\Debug\net8.0\EmotiaMart.API.genruntimeconfig.cache
 D:\EmotiaMart\src\EmotiaMart.Backend\EmotiaMart.API\obj\Debug\net8.0\ref\EmotiaMart.API.dll
+D:\EmotiaMart\src\EmotiaMart.Backend\EmotiaMart.API\bin\Debug\net8.0\assets\images\auth_left_banner.jpg
+D:\EmotiaMart\src\EmotiaMart.Backend\EmotiaMart.API\bin\Debug\net8.0\assets\images\home-page-banner-test.jpg
+D:\EmotiaMart\src\EmotiaMart.Backend\EmotiaMart.API\bin\Debug\net8.0\assets\images\home-page-banner.jpg
+D:\EmotiaMart\src\EmotiaMart.Backend\EmotiaMart.API\bin\Debug\net8.0\assets\logo\emotia_logo_without_black.png
+D:\EmotiaMart\src\EmotiaMart.Backend\EmotiaMart.API\bin\Debug\net8.0\assets\logo\emotia_main_logo.png
+D:\EmotiaMart\src\EmotiaMart.Backend\EmotiaMart.API\bin\Debug\net8.0\favicon.ico
+D:\EmotiaMart\src\EmotiaMart.Backend\EmotiaMart.API\bin\Debug\net8.0\index.csr.html
+D:\EmotiaMart\src\EmotiaMart.Backend\EmotiaMart.API\bin\Debug\net8.0\index.html
+D:\EmotiaMart\src\EmotiaMart.Backend\EmotiaMart.API\bin\Debug\net8.0\main-5OPI2MSC.js
+D:\EmotiaMart\src\EmotiaMart.Backend\EmotiaMart.API\bin\Debug\net8.0\polyfills-FFHMD2TL.js
+D:\EmotiaMart\src\EmotiaMart.Backend\EmotiaMart.API\bin\Debug\net8.0\styles-LR4OKDNK.css

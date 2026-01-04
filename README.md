@@ -237,3 +237,19 @@ It's required by '@apollo/client/core' package so please add it to your tsconfig
 We couldn't enable 'allowSyntheticDefaultImports' flag.
 It's required by '@apollo/client/core' package so please add it to your tsconfig.
 # Solve: https://stackoverflow.com/questions/79270208/why-does-a-new-angular-19-app-error-when-executing-ng-add-apollo-angular
+
+
+
+
+
+Frontend (Angular)
+├── Student UI
+├── Instructor UI
+└── Auth Guards
+↓ REST API
+Backend (ASP.NET Core Web API)
+├── Auth (JWT)
+├── Question Engine
+├── Auto Grading
+├── Courses / Assignments
+└── SQL Server / PostgreSQL
